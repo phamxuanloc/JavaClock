@@ -20,18 +20,20 @@ public class JavaClock {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        JavaClock cl = new JavaClock();
+        cl.clock();
         // TODO code application logic here
-Count count = new Count(10, 59, 57);
-count.start();
+
     }
 
-    public void menu() {
+    public void clock() {
         System.out.println("nhap h:");
         int h = Integer.parseInt(sc.nextLine());
         System.out.println("nhap m:");
         int m = Integer.parseInt(sc.nextLine());
         System.out.println("nhap s:");
         int s = Integer.parseInt(sc.nextLine());
-
+        Count count = new Count(h, m, s);
+        count.start();
     }
 }
