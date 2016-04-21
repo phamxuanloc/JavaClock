@@ -14,16 +14,56 @@ import java.util.logging.Logger;
  */
 public class Count extends Thread {
 
+    private int h;
+    private int m;
+    private int i;
+
+    public Count(int h, int m, int i) {
+        this.h = h;
+        this.m = m;
+        this.i = i;
+    }
+
+    public int getH() {
+        return h;
+    }
+
+    public void setH(int h) {
+        this.h = h;
+    }
+
+    public int getM() {
+        return m;
+    }
+
+    public void setM(int m) {
+        this.m = m;
+    }
+
+    public int getI() {
+        return i;
+    }
+
+    public void setI(int i) {
+        this.i = i;
+    }
+
     @Override
     public void run() {
-        int i = 50;
         while (true) {
-
+            System.out.println("current time: "+h+" : "+m+" : " +i);
             try {
-                System.out.println(i);
-                i++;
+                i++;  
                 if (i == 60) {
                     i = 0;
+                    m++;
+                    if (m == 60) {
+                        m = 1;
+                        h++;
+                        if(h== 12){
+                        h=0;
+                        }
+                    }
                 }
                 Thread.sleep(1000);
 
