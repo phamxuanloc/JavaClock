@@ -21,8 +21,8 @@ public class JavaClock {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Count count = new Count();
-        count.start();
+Count count = new Count(10, 59, 57);
+count.start();
     }
 
     public void menu() {
