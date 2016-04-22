@@ -51,7 +51,6 @@ public class Count extends Thread {
     @Override
     public void run() {
         while (true) {
-            System.out.println("current time: "+h+" : "+m+" : " +i);
             try {
                 i++;  
                 if (i == 60) {
