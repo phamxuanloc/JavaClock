@@ -7,6 +7,9 @@ package javaclock;
 
 import Count.Count;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -115,8 +118,26 @@ public class Cl extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        int a = 
-        Count count = new Count(a, b, c);
+        int a = Integer.parseInt(h.getText());
+               int b = Integer.parseInt(m.getText());
+        int c = Integer.parseInt(s.getText());
+//                Count count = new Count(a, b, c);
+//        count.start();
+h.setText(a+"");
+//while (true){
+m.setText(b+"");
+
+while(true){
+            try{
+                                c++;;
+                                s.setText(c+"");
+                                Thread.sleep(1000);
+
+
+            } catch (InterruptedException ex) {
+                Logger.getLogger(Cl.class.getName()).log(Level.SEVERE, null, ex);
+            }
+}
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
